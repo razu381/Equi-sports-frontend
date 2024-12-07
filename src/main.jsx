@@ -12,7 +12,7 @@ import AllEquipments from "./pages/AllEquipments";
 import AddEquipments from "./pages/AddEquipments";
 import MyEquipments from "./pages/MyEquipments";
 import UpdateEquipment from "./pages/UpdateEquipment";
-import SingleEquipment from "./components/SingleEquipment";
+import SingleEquipment from "./pages/SingleEquipment";
 const router = createBrowserRouter([
   {
     path: "/",
