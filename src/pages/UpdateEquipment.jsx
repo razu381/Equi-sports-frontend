@@ -134,11 +134,11 @@ function UpdateEquipment() {
               </label>
               <input
                 className="w-full rounded-lg bg-white  border-gray-200 p-3 text-sm"
-                placeholder="Processing Time  "
+                placeholder="Processing Time"
                 type="text"
-                name="processingTime "
+                name="processingTime"
                 // prettier-ignore
-                defaultValue={currData?.["processingTime "]}
+                defaultValue={currData?.["processingTime"]}
               />
             </div>
 
