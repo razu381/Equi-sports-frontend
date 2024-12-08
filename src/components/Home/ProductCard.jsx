@@ -1,17 +1,25 @@
-import React from "react";
-import { FaEdit, FaRegHeart } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { FaEdit, FaRegEdit, FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import {
   MdDelete,
   MdDeleteForever,
   MdOutlineDeleteForever,
 } from "react-icons/md";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 
 function ProductCard({ product }) {
   let { _id, name, image, price, category } = product;
+  let [isEditable, setEditable] = useState(false);
 
-  console.log(product);
+  let location = useLocation().pathname;
+
+  useEffect(() => {
+    if (location === "/my-equipments") {
+      setEditable(true);
+    }
+  }, [location]);
+
   return (
     <Link
       to={``}
@@ -38,10 +46,18 @@ function ProductCard({ product }) {
           </div>
           <div className="justify-self-end flex flex-col justify-center items-center gap-4">
             <button>
-              <IoCartOutline color="#2ecc71" size={25} />
+              {isEditable ? (
+                <MdDeleteForever color="#ff0000" size={25} />
+              ) : (
+                <IoCartOutline color="#2ecc71" size={25} />
+              )}
             </button>
             <button>
-              <FaRegHeart color="#2ecc71" size={20} />
+              {isEditable ? (
+                <FaRegEdit color="#2ecc71" size={20} />
+              ) : (
+                <FaRegHeart color="#2ecc71" size={20} />
+              )}
             </button>
           </div>
         </div>
