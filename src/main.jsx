@@ -14,6 +14,7 @@ import MyEquipments from "./pages/MyEquipments";
 import UpdateEquipment from "./pages/UpdateEquipment";
 import SingleEquipment from "./pages/SingleEquipment";
 import PrivateRouter from "./Auth/PrivateRouter";
+import Error from "./pages/Error";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
         element: <Login />,
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Error />,
   },
 ]);
 
