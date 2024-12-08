@@ -4,8 +4,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { ThemeContext } from "../../pages/Home";
 
 function Hero() {
+  let { isLight } = useContext(ThemeContext);
   return (
     <div>
       <Swiper
@@ -20,7 +23,11 @@ function Hero() {
         navigation={true}
       >
         <SwiperSlide>
-          <div className="hero min-h-screen bg-equi-primary-700">
+          <div
+            className={`hero min-h-screen ${
+              isLight ? "bg-equi-primary-700" : "bg-black"
+            } `}
+          >
             <div className=""></div>
             <div className="hero-content text-neutral-content text-center">
               <div className="max-w-lg">
