@@ -54,7 +54,9 @@ function ProductCard({ product }) {
             </button>
             <button>
               {isEditable ? (
-                <FaRegEdit color="#2ecc71" size={20} />
+                <Link to={`/update-equipment/${_id}`}>
+                  <FaRegEdit color="#2ecc71" size={20} />
+                </Link>
               ) : (
                 <FaRegHeart color="#2ecc71" size={20} />
               )}
