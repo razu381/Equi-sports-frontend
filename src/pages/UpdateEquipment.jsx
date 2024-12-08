@@ -19,7 +19,7 @@ function UpdateEquipment() {
     UpdatedData.email = user.email;
     UpdatedData.Username = user.displayName;
 
-    fetch(`http://localhost:3000/equipments/${id}`, {
+    fetch(`https://equisports-backend.vercel.app/equipments/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

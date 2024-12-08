@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, Suspense } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 
@@ -15,6 +15,7 @@ import UpdateEquipment from "./pages/UpdateEquipment";
 import SingleEquipment from "./pages/SingleEquipment";
 import PrivateRouter from "./Auth/PrivateRouter";
 import Error from "./pages/Error";
+import Spinner from "./components/Spinner";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,8 +27,13 @@ const router = createBrowserRouter([
       },
       {
         path: "/all-equipments",
-        element: <AllEquipments />,
-        loader: () => fetch("http://localhost:3000/equipments/"),
+        element: (
+          <Suspense fallback={<Spinner />}>
+            <AllEquipments />
+          </Suspense>
+        ),
+        loader: () =>
+          fetch("https://equisports-backend.vercel.app/equipments/"),
       },
       {
         path: "/all-equipment/:id",
@@ -37,7 +43,9 @@ const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/equipments/${params.id}`),
+          fetch(
+            `https://equisports-backend.vercel.app/equipments/${params.id}`
+          ),
       },
       {
         path: "/add-equipment",
@@ -55,7 +63,9 @@ const router = createBrowserRouter([
           </PrivateRouter>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/equipments/${params.id}`),
+          fetch(
+            `https://equisports-backend.vercel.app/equipments/${params.id}`
+          ),
       },
       {
         path: "/my-equipments",

@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import Spinner from "../Spinner";
 
 function ProductsSection() {
   let [products, setProducts] = useState([]);
+  let [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    fetch("http://localhost:3000/equipments/for-home")
+    fetch("https://equisports-backend.vercel.app/equipments/for-home")
       .then((res) => res.json())
-      .then((productData) => setProducts(productData))
+      .then((productData) => {
+        setProducts(productData);
+        setLoading(false);
+      })
       .catch((err) => console.log(err));
   }, []);
+
+  if (loading) return <Spinner />;
   return (
     <div className="pt-6 pb-10">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">

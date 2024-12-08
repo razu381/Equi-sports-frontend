@@ -14,7 +14,7 @@ function AddEquipments() {
     productData.UserName = user.displayName;
     console.log("user submitted data", productData);
 
-    fetch("http://localhost:3000/equipments", {
+    fetch("https://equisports-backend.vercel.app/equipments", {
       method: "POST",
       headers: {
         "content-type": "application/json",

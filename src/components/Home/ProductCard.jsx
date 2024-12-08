@@ -24,7 +24,7 @@ function ProductCard({ product, equipments, setEquipments }) {
   function handleDelete(id) {
     console.log("delete requested", id);
 
-    fetch(`http://localhost:3000/equipments/${id}`, {
+    fetch(`https://equisports-backend.vercel.app/equipments/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

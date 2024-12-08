@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
+import Spinner from "../Spinner";
 
 function Categories() {
   let [categories, setCategories] = useState([]);
-
+  let [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:3000/categories")
+    fetch("https://equisports-backend.vercel.app/categories")
       .then((res) => res.json())
-      .then((data) => setCategories(data));
+      .then((data) => {
+        setCategories(data);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) return <Spinner />;
 
   return (
     <div className="my-10 px-5 lg:px-10">

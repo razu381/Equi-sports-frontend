@@ -5,10 +5,10 @@ import ProductCard from "../components/Home/ProductCard";
 function MyEquipments() {
   let { user } = useContext(AuthContext);
   let [equipments, setEquipments] = useState([]);
-  //console.log(`http://localhost:3000/my-equipments/${user?.email}`);
+  //console.log(`https://equisports-backend.vercel.app/my-equipments/${user?.email}`);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/my-equipments/${user?.email}`)
+    fetch(`https://equisports-backend.vercel.app/my-equipments/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setEquipments(data));
   }, [user]);
