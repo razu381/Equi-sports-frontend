@@ -1,21 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../pages/Home";
 
 function BlogsSection() {
+  let { isLight } = useContext(ThemeContext);
   return (
     <>
-      <div className="mx-auto max-w-3xl text-center mt-10">
-        <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+      <div
+        className={`mx-auto max-w-3xl text-center mt-10 ${
+          isLight ? "equi-light-mode" : "equi-dark-mode"
+        }`}
+      >
+        <h2 className="text-3xl font-bold  sm:text-4xl">
           Stay Updated with Sports Gear Insights
         </h2>
 
-        <p className="mt-4 text-equi-text sm:text-xl">
+        <p className="mt-4  sm:text-xl">
           Explore expert tips, product guides, and trends to elevate your game
           and performance.
         </p>
       </div>
 
-      <div className="grid grid-cols-1  md:grid-cols-3 gap-10 my-10 mx-5 lg:mx-10 lg:mb-20">
-        <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+      <div
+        className={`grid grid-cols-1  md:grid-cols-3 gap-10 py-10 mx-5 lg:mx-10 pb-10 ${
+          isLight ? "equi-light-mode" : "equi-dark-mode"
+        }`}
+      >
+        <article className="overflow-hidden rounded-lg border border-gray-100  shadow-sm">
           <img
             alt=""
             src="https://i.ibb.co.com/hyKwHjW/blog1.jpg"
@@ -24,12 +34,12 @@ function BlogsSection() {
 
           <div className="p-4 sm:p-6">
             <a href="#">
-              <h3 className="text-lg font-medium text-gray-900">
+              <h3 className="text-lg font-medium ">
                 Top 5 Cricket Bats for Maximum Power and Precision
               </h3>
             </a>
 
-            <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+            <p className="mt-2 line-clamp-3 text-sm/relaxed ">
               Discover the best cricket bats offering unmatched power,
               precision, and durability for players of all levels. Learn what
               makes these bats stand out and how to choose the right one for
@@ -50,7 +60,7 @@ function BlogsSection() {
             </a>
           </div>
         </article>
-        <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+        <article className="overflow-hidden rounded-lg border border-gray-100  shadow-sm">
           <img
             alt=""
             src="https://i.ibb.co.com/zncdCbg/blog2.jpg"
@@ -59,12 +69,12 @@ function BlogsSection() {
 
           <div className="p-4 sm:p-6">
             <a href="#">
-              <h3 className="text-lg font-medium text-gray-900">
+              <h3 className="text-lg font-medium ">
                 Essential Gear Every Football Player Should Invest In
               </h3>
             </a>
 
-            <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+            <p className="mt-2 line-clamp-3 text-sm/relaxed ">
               Upgrade your football kit with high-quality essentials, from
               durable cleats to protective gear. Enhance your game with
               equipment designed to boost performance and ensure safety on the
@@ -85,7 +95,7 @@ function BlogsSection() {
             </a>
           </div>
         </article>
-        <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
+        <article className="overflow-hidden rounded-lg border border-gray-100  shadow-sm">
           <img
             alt=""
             src="https://i.ibb.co.com/6tmdQjx/blog3.jpg"
@@ -94,12 +104,12 @@ function BlogsSection() {
 
           <div className="p-4 sm:p-6">
             <a href="#">
-              <h3 className="text-lg font-medium text-gray-900">
+              <h3 className="text-lg font-medium ">
                 Best Yoga Mats for Comfort and Grip in 2024
               </h3>
             </a>
 
-            <p className="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
+            <p className="mt-2 line-clamp-3 text-sm/relaxed ">
               Explore yoga mats that provide excellent cushioning, stability,
               and non-slip surfaces. Perfect for all levels, these mats combine
               comfort with eco-friendly materials for a mindful practice.

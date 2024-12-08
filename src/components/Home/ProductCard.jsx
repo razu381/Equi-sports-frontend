@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaEdit, FaRegEdit, FaRegHeart } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import {
@@ -9,8 +9,10 @@ import {
 import { Link, useLoaderData, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import swal from "sweetalert";
+import { ThemeContext } from "../../pages/Home";
 
 function ProductCard({ product, equipments, setEquipments }) {
+  let { isLight } = useContext(ThemeContext);
   let { _id, name, image, price, category } = product;
   let [isEditable, setEditable] = useState(false);
 
@@ -56,7 +58,9 @@ function ProductCard({ product, equipments, setEquipments }) {
   return (
     <Link
       to={``}
-      className="relative block rounded-tr-3xl border border-grey-100 mb-5"
+      className={`relative block rounded-tr-3xl border border-grey-100 mb-5 ${
+        isLight ? "equi-light-mode" : "equi-dark-mode"
+      }`}
     >
       <span className="absolute -right-px -top-px rounded-bl-3xl rounded-tr-3xl bg-rose-600 px-6 py-4 font-medium uppercase tracking-widest text-white">
         Save 10%
@@ -69,15 +73,13 @@ function ProductCard({ product, equipments, setEquipments }) {
       />
 
       <div className="p-4">
-        <div className="grid grid-cols-2">
-          <div>
-            <strong className="text-xl font-medium text-gray-900">
-              {name}
-            </strong>
-            <p className="mt-2  text-equi-text">Price: {price}</p>
-            <p className="mt-2  text-equi-text">Category: {category}</p>
+        <div className="grid grid-cols-12">
+          <div className="col-span-8">
+            <strong className="text-xl font-medium ">{name}</strong>
+            <p className="mt-2  ">Price: {price}</p>
+            <p className="mt-2  ">Category: {category}</p>
           </div>
-          <div className="justify-self-end flex flex-col justify-center items-center gap-4">
+          <div className="justify-self-end flex flex-col justify-center items-center gap-4 col-span-4">
             <button>
               {isEditable ? (
                 <MdDeleteForever

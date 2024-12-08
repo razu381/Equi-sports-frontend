@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import Spinner from "../Spinner";
+import { ThemeContext } from "../../pages/Home";
 
 function ProductsSection() {
+  let { isLight } = useContext(ThemeContext);
   let [products, setProducts] = useState([]);
   let [loading, setLoading] = useState(true);
 
@@ -18,12 +20,12 @@ function ProductsSection() {
 
   if (loading) return <Spinner />;
   return (
-    <div className="pt-6 pb-10">
+    <div
+      className={`pt-6 pb-10 ${isLight ? "equi-light-mode" : "equi-dark-mode"}`}
+    >
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <header className="text-center">
-          <h2 className="text-xl font-bold text-black sm:text-3xl">
-            Product Collection
-          </h2>
+          <h2 className="text-xl font-bold  sm:text-3xl">Product Collection</h2>
 
           <p className="mx-auto mt-4 max-w-lg">
             Discover our newest arrivals in sports gear and equipment, crafted

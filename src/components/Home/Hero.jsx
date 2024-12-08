@@ -25,7 +25,7 @@ function Hero() {
         <SwiperSlide>
           <div
             className={`hero min-h-screen ${
-              isLight ? "bg-equi-primary-700" : "bg-black"
+              isLight ? "bg-equi-primary-700" : "bg-equi-primary-900"
             } `}
           >
             <div className=""></div>
@@ -40,7 +40,13 @@ function Hero() {
                   game with quality you can trust.
                 </p>
                 <Link to="/my-equipments">
-                  <button className="btn bg-equi-primary-400 hover:bg-equi-primary-500 text-white border-none px-10">
+                  <button
+                    className={`btn ${
+                      isLight
+                        ? "bg-equi-primary-400 hover:bg-equi-primary-500"
+                        : "bg-equi-primary-700 hover:bg-equi-primary-700"
+                    }  text-white border-none px-10`}
+                  >
                     Shop Now
                   </button>
                 </Link>
@@ -49,7 +55,11 @@ function Hero() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="hero min-h-screen bg-equi-primary-700">
+          <div
+            className={`hero min-h-screen  ${
+              isLight ? "bg-equi-primary-700" : "bg-equi-primary-900"
+            }`}
+          >
             <div className="hero-content text-neutral-content text-center">
               <div className="max-w-lg">
                 <h1 className="mb-5 text-5xl font-bold text-white">
@@ -61,7 +71,13 @@ function Hero() {
                   equipment truly yours.
                 </p>
                 <Link to="/my-equipments">
-                  <button className="btn bg-equi-primary-400 hover:bg-equi-primary-500 text-white border-none px-10">
+                  <button
+                    className={`btn ${
+                      isLight
+                        ? "bg-equi-primary-400 hover:bg-equi-primary-500"
+                        : "bg-equi-primary-700 hover:bg-equi-primary-700"
+                    }  text-white border-none px-10`}
+                  >
                     Shop Now
                   </button>
                 </Link>
@@ -70,7 +86,11 @@ function Hero() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="hero min-h-screen bg-equi-primary-700">
+          <div
+            className={`hero min-h-screen  ${
+              isLight ? "bg-equi-primary-700" : "bg-equi-primary-900"
+            }`}
+          >
             <div className="hero-content text-neutral-content text-center">
               <div className="max-w-lg">
                 <h1 className="mb-5 text-5xl font-bold text-white">
@@ -82,7 +102,13 @@ function Hero() {
                   next adventure.
                 </p>
                 <Link to="/my-equipments">
-                  <button className="btn bg-equi-primary-400 hover:bg-equi-primary-500  text-white border-none px-10">
+                  <button
+                    className={`btn ${
+                      isLight
+                        ? "bg-equi-primary-400 hover:bg-equi-primary-500"
+                        : "bg-equi-primary-700 hover:bg-equi-primary-700"
+                    }  text-white border-none px-10`}
+                  >
                     Shop Now
                   </button>
                 </Link>

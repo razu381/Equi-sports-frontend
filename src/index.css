@@ -33,3 +33,13 @@ p {
   color: white;
   opacity: 0.5;
 }
+
+.equi-dark-mode {
+  background-color: #072c18;
+  color: white;
+}
+
+.equi-light-mode {
+  background-color: white;
+  color: black;
+}

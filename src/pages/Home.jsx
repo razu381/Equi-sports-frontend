@@ -17,7 +17,7 @@ function Home() {
   console.log("light mode is ", isLight);
   return (
     <ThemeContext.Provider value={themeInfo}>
-      <div className="relative">
+      <div className={`relative ${isLight || "bg-equi-primary-950"}`}>
         <input
           onChange={() => setLight(!isLight)}
           type="checkbox"
