@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Auth.jsx/AuthProvider";
+import { toast } from "react-toastify";
 
 function AddEquipments() {
   let { user } = useContext(AuthContext);
@@ -23,6 +24,7 @@ function AddEquipments() {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        toast.success("New equipment added");
       })
       .catch((err) => console.log(err));
   }

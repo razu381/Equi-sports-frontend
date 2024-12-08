@@ -21,7 +21,12 @@ function MyEquipments() {
       </h2>
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-5 gap-8 justify-center items-center">
         {equipments.map((product) => (
-          <ProductCard key={product._id} product={product} />
+          <ProductCard
+            key={product._id}
+            product={product}
+            equipments={equipments}
+            setEquipments={setEquipments}
+          />
         ))}
       </div>
     </div>

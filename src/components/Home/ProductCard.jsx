@@ -7,8 +7,9 @@ import {
   MdOutlineDeleteForever,
 } from "react-icons/md";
 import { Link, useLoaderData, useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 
-function ProductCard({ product }) {
+function ProductCard({ product, equipments, setEquipments }) {
   let { _id, name, image, price, category } = product;
   let [isEditable, setEditable] = useState(false);
 
@@ -19,6 +20,24 @@ function ProductCard({ product }) {
       setEditable(true);
     }
   }, [location]);
+
+  function handleDelete(id) {
+    console.log("delete requested", id);
+
+    fetch(`http://localhost:3000/equipments/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        let remainingEquipments = equipments.filter(
+          (equipment) => equipment._id != id
+        );
+        setEquipments(remainingEquipments);
+        console.log(data);
+        toast.error("Equipment deleted");
+      })
+      .catch((err) => console.log(err));
+  }
 
   return (
     <Link
@@ -47,7 +66,11 @@ function ProductCard({ product }) {
           <div className="justify-self-end flex flex-col justify-center items-center gap-4">
             <button>
               {isEditable ? (
-                <MdDeleteForever color="#ff0000" size={25} />
+                <MdDeleteForever
+                  color="#ff0000"
+                  size={25}
+                  onClick={() => handleDelete(_id)}
+                />
               ) : (
                 <IoCartOutline color="#2ecc71" size={25} />
               )}
