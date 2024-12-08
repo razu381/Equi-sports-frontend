@@ -13,6 +13,7 @@ import AddEquipments from "./pages/AddEquipments";
 import MyEquipments from "./pages/MyEquipments";
 import UpdateEquipment from "./pages/UpdateEquipment";
 import SingleEquipment from "./pages/SingleEquipment";
+import PrivateRouter from "./Auth.jsx/PrivateRouter";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,23 +30,39 @@ const router = createBrowserRouter([
       },
       {
         path: "/all-equipment/:id",
-        element: <SingleEquipment />,
+        element: (
+          <PrivateRouter>
+            <SingleEquipment />
+          </PrivateRouter>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/equipments/${params.id}`),
       },
       {
         path: "/add-equipment",
-        element: <AddEquipments />,
+        element: (
+          <PrivateRouter>
+            <AddEquipments />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/update-equipment/:id",
-        element: <UpdateEquipment />,
+        element: (
+          <PrivateRouter>
+            <UpdateEquipment />
+          </PrivateRouter>
+        ),
         loader: ({ params }) =>
           fetch(`http://localhost:3000/equipments/${params.id}`),
       },
       {
         path: "/my-equipments",
-        element: <MyEquipments />,
+        element: (
+          <PrivateRouter>
+            <MyEquipments />
+          </PrivateRouter>
+        ),
       },
       {
         path: "/signup",
