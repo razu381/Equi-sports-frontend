@@ -8,6 +8,7 @@ import {
 } from "react-icons/md";
 import { Link, useLoaderData, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
+import swal from "sweetalert";
 
 function ProductCard({ product, equipments, setEquipments }) {
   let { _id, name, image, price, category } = product;
@@ -23,20 +24,33 @@ function ProductCard({ product, equipments, setEquipments }) {
 
   function handleDelete(id) {
     console.log("delete requested", id);
-
-    fetch(`https://equisports-backend.vercel.app/equipments/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        let remainingEquipments = equipments.filter(
-          (equipment) => equipment._id != id
-        );
-        setEquipments(remainingEquipments);
-        console.log(data);
-        toast.error("Equipment deleted");
-      })
-      .catch((err) => console.log(err));
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this imaginary file!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        fetch(`https://equisports-backend.vercel.app/equipments/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            let remainingEquipments = equipments.filter(
+              (equipment) => equipment._id != id
+            );
+            setEquipments(remainingEquipments);
+            console.log(data);
+            swal("Poof! Your Equipment has been deleted!", {
+              icon: "success",
+            });
+          })
+          .catch((err) => console.log(err));
+      } else {
+        swal("Your Equipment is safe!");
+      }
+    });
   }
 
   return (
