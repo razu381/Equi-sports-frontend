@@ -37,10 +37,10 @@ function AllEquipments() {
               <td className="border border-equi-primary-500">
                 {equipment?.rating}
               </td>
-              <td className="border border-equi-primary-500 px-2">
+              <td className="border border-equi-primary-500 px-2 py-2">
                 <Link
                   to={`/all-equipment/${equipment?._id}`}
-                  className="block py-1 px-1 bg-equi-primary-600 my-2 text-white"
+                  className="block lg:inline-block py-1 px-2 bg-equi-primary-600 my-2 text-white"
                 >
                   View Details
                 </Link>

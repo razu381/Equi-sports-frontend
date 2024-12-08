@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
-import { AuthContext } from "../Auth.jsx/AuthProvider";
+import { AuthContext } from "../Auth/AuthProvider";
 
 function Signup() {
   let { setUser, createAccount, editProfile, loginWithGoogle } =

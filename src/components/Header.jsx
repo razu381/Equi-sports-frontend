@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link, Links, NavLink } from "react-router-dom";
-import { AuthContext } from "../Auth.jsx/AuthProvider";
+import { AuthContext } from "../Auth/AuthProvider";
 import { Tooltip } from "react-tooltip";
 
 function Header() {

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AuthContext } from "../Auth.jsx/AuthProvider";
+import { AuthContext } from "../Auth/AuthProvider";
 import { toast } from "react-toastify";
 
 function AddEquipments() {
@@ -35,6 +35,36 @@ function AddEquipments() {
           <h2 className="text-white font-bold text-2xl text-center py-6">
             Add a new equipment
           </h2>
+          {/* Row 0 */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div>
+              <label className="sr-only" htmlFor="userName">
+                Username
+              </label>
+              <input
+                className="w-full rounded-lg bg-white  border-gray-200 p-3 text-sm"
+                placeholder="Username"
+                type="text"
+                name="UserName"
+                defaultValue={user?.displayName}
+                disabled
+              />
+            </div>
+
+            <div>
+              <label className="sr-only" htmlFor="email">
+                Email
+              </label>
+              <input
+                className="w-full rounded-lg bg-white border-gray-200 p-3 text-sm"
+                placeholder="Email"
+                type="text"
+                name="emial"
+                defaultValue={user.email}
+                disabled
+              />
+            </div>
+          </div>
           {/* Row 1 */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div>

@@ -49,7 +49,7 @@ function SingleEquipment() {
           </div>
 
           <div>
-            <img src={image} alt="" />
+            <img src={image} alt="" className="rounded-xl" />
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import "./index.css";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./Root";
-import AuthProvider from "./Auth.jsx/AuthProvider";
+import AuthProvider from "./Auth/AuthProvider";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
@@ -13,7 +13,7 @@ import AddEquipments from "./pages/AddEquipments";
 import MyEquipments from "./pages/MyEquipments";
 import UpdateEquipment from "./pages/UpdateEquipment";
 import SingleEquipment from "./pages/SingleEquipment";
-import PrivateRouter from "./Auth.jsx/PrivateRouter";
+import PrivateRouter from "./Auth/PrivateRouter";
 const router = createBrowserRouter([
   {
     path: "/",

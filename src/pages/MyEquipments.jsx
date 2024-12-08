@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../Auth.jsx/AuthProvider";
+import { AuthContext } from "../Auth/AuthProvider";
 import ProductCard from "../components/Home/ProductCard";
 
 function MyEquipments() {

@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { AuthContext } from "../Auth.jsx/AuthProvider";
+import { AuthContext } from "../Auth/AuthProvider";
 
 function Login() {
   let { setUser, signIn, loginWithGoogle } = useContext(AuthContext);
