@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import Spinner from "../Spinner";
-import { ThemeContext } from "../../pages/Home";
+import { ThemeContext } from "../../Root";
 
 function ProductsSection() {
   let { isLight } = useContext(ThemeContext);

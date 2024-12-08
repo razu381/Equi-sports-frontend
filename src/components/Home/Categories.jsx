@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Spinner from "../Spinner";
-import { ThemeContext } from "../../pages/Home";
+import { ThemeContext } from "../../Root";
 
 function Categories() {
   let { isLight } = useContext(ThemeContext);

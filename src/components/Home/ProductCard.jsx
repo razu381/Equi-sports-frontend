@@ -9,7 +9,7 @@ import {
 import { Link, useLoaderData, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import swal from "sweetalert";
-import { ThemeContext } from "../../pages/Home";
+import { ThemeContext } from "../../Root";
 
 function ProductCard({ product, equipments, setEquipments }) {
   let { isLight } = useContext(ThemeContext);

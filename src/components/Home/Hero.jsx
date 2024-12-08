@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import { A11y, Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { ThemeContext } from "../../pages/Home";
+import { ThemeContext } from "../../Root";
 
 function Hero() {
   let { isLight } = useContext(ThemeContext);

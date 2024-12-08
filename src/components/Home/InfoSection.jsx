@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../../pages/Home";
+import { ThemeContext } from "../../Root";
 
 function InfoSection() {
   let { isLight } = useContext(ThemeContext);
