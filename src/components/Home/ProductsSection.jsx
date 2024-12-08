@@ -7,7 +7,7 @@ function ProductsSection() {
     fetch("http://localhost:3000/equipments/for-home")
       .then((res) => res.json())
       .then((productData) => setProducts(productData))
-      .catch((err) => console.logI(err));
+      .catch((err) => console.log(err));
   }, []);
   return (
     <div className="bg-equi-primary-100 bg-opacity-20 pt-6 pb-10">
