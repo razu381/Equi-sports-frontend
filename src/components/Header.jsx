@@ -3,11 +3,12 @@ import { Link, Links, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
 import { Tooltip } from "react-tooltip";
 import Spinner from "./Spinner";
+import { ThemeContext } from "../Root";
 
 function Header() {
   let { user, LogOut, loading } = useContext(AuthContext);
   let [isUserImageHovered, setUserImageHovered] = useState(false);
-
+  let { isLight } = useContext(ThemeContext);
   console.log(user);
   let li = (
     <>
@@ -27,7 +28,7 @@ function Header() {
   );
 
   return (
-    <div className="navbar bg-equi-primary-100 bg-opacity-40">
+    <div className={`navbar ${isLight ? "equi-light-mode" : "equi-dark-mode"}`}>
       <div className="navbar-start z-50">
         <div className="dropdown ">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

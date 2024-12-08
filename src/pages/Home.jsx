@@ -7,7 +7,7 @@ import BlogsSection from "../components/Home/BlogsSection";
 import { ThemeContext } from "../Root";
 
 function Home() {
-  let [isLight, setLight] = useContext(ThemeContext);
+  let { isLight, setLight } = useContext(ThemeContext);
   console.log("light mode is ", isLight);
 
   return (
