@@ -3,7 +3,7 @@ import React from "react";
 function BlogsSection() {
   return (
     <>
-      <div className="mx-auto max-w-3xl text-center">
+      <div className="mx-auto max-w-3xl text-center mt-10">
         <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
           Stay Updated with Sports Gear Insights
         </h2>
@@ -14,7 +14,7 @@ function BlogsSection() {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-5 mt-10 mb-10 lg:mb-20">
+      <div className="grid grid-cols-1  md:grid-cols-3 gap-10 my-10 mx-5 lg:mx-10 lg:mb-20">
         <article className="overflow-hidden rounded-lg border border-gray-100 bg-white shadow-sm">
           <img
             alt=""

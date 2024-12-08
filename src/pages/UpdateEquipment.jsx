@@ -36,7 +36,7 @@ function UpdateEquipment() {
       );
   }
   return (
-    <div className="bg-equi-primary-950 py-20 px-[15%]">
+    <div className="bg-equi-primary-950 py-20 px-5 lg:px-[15%]">
       <div className="rounded-lg bg-white bg-opacity-5 p-8 shadow-lg lg:col-span-3 lg:p-12">
         <form onSubmit={handleUpdate} action="#" className="space-y-4">
           <h2 className="text-white font-bold text-2xl text-center py-6">

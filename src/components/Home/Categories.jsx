@@ -10,7 +10,7 @@ function Categories() {
   }, []);
 
   return (
-    <div className="my-10">
+    <div className="my-10 px-5 lg:px-10">
       <h2 className="text-xl font-bold text-black sm:text-3xl text-center ">
         Product Categories
       </h2>
