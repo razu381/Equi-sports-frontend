@@ -15,8 +15,10 @@ function MyEquipments() {
 
   console.log(equipments);
   return (
-    <div>
-      <h2 className="font-bold text-center font-2xl py-6">My Equipments</h2>
+    <div className="mx-[5%] xl:mx-[10%]">
+      <h2 className="font-bold text-center  text-2xl lg:text-3xl mt-10 py-6">
+        My Equipments
+      </h2>
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-5 gap-8 justify-center items-center">
         {equipments.map((product) => (
           <ProductCard key={product._id} product={product} />

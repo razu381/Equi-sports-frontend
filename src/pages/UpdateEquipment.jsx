@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../Auth.jsx/AuthProvider";
+import { toast } from "react-toastify";
 
 function UpdateEquipment() {
   let { user } = useContext(AuthContext);
@@ -27,9 +28,12 @@ function UpdateEquipment() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log("Update req data", data);
+        toast.success("Equipment udpdated successfully");
       })
-      .catch((err) => console.log(err));
+      .catch((err) =>
+        toast.error("There was an error updating your equipment")
+      );
   }
   return (
     <div className="bg-equi-primary-950 py-20 px-[15%]">

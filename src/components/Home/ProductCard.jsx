@@ -63,13 +63,14 @@ function ProductCard({ product }) {
             </button>
           </div>
         </div>
-
-        <Link
-          to={`/all-equipment/${_id}`}
-          className="mt-4 block rounded-md border border-equi-primary-900 bg-equi-primary-900 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-equi-primary-500 hover:text-equi-900 text-center"
-        >
-          Learn More
-        </Link>
+        {isEditable || (
+          <Link
+            to={`/all-equipment/${_id}`}
+            className="mt-4 block rounded-md border border-equi-primary-900 bg-equi-primary-900 px-5 py-3 text-sm font-medium uppercase tracking-widest text-white transition-colors hover:bg-equi-primary-500 hover:text-equi-900 text-center"
+          >
+            Learn More
+          </Link>
+        )}
       </div>
     </Link>
   );
