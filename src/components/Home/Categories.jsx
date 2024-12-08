@@ -15,8 +15,11 @@ function Categories() {
         Product Categories
       </h2>
       <div className="grid grid-cols-2  lg:grid-cols-4 gap-5 py-6">
-        {categories.map((category) => (
-          <div className="bg-equi-primary-100 py-5 px-10">
+        {categories.map((category, idx) => (
+          <div
+            className="bg-equi-primary-100 py-5 px-10"
+            key={`category-${idx}`}
+          >
             <h3 className="text-center">{category}</h3>
           </div>
         ))}
