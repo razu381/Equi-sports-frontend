@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 function AllEquipments() {
-  let equipments = useLoaderData();
-  console.log(equipments);
+  let [equipments, setEquipments] = useState(useLoaderData());
 
+  function handleSort() {
+    let sortedEquipements = [...equipments].sort(
+      (a, b) => parseFloat(a.price) - parseFloat(b.price)
+    );
+    setEquipments(sortedEquipements);
+  }
   return (
     <div className="px-[5%] lg:px-[10%] mx-auto my-10">
+      <div className="flex justify-between py-5">
+        <h2 className="font-bold text-2xl ">All Sport Equipments</h2>
+        <button
+          onClick={handleSort}
+          className="bg-equi-primary-600 text-white py-2 px-5"
+        >
+          Sort Equipments
+        </button>
+      </div>
       <table className="table-auto border-collapse border border-equi-primary-500 w-full text-center">
         <thead className="">
           <tr>

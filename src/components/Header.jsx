@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, Links, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvider";
 import { Tooltip } from "react-tooltip";
+import Spinner from "./Spinner";
 
 function Header() {
   let { user, LogOut, loading } = useContext(AuthContext);
@@ -64,11 +65,8 @@ function Header() {
       </div>
       <div className="navbar-end">
         {loading ? (
-          <div className="">
-            <span className="loading loading-bars loading-xs"></span>
-            <span className="loading loading-bars loading-sm"></span>
-            <span className="loading loading-bars loading-md"></span>
-            <span className="loading loading-bars loading-lg"></span>
+          <div className="max-w-20">
+            <Spinner />
           </div>
         ) : (
           <>
