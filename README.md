@@ -1,8 +1,15 @@
-# React + Vite
+# Equisports
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sport products shop
 
-Currently, two official plugins are available:
+# Live link:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://equi-sports-5d00a.web.app/
+
+# Features:
+
+- User registration and login
+- Creating, displaying, deleting and updatingn information in database
+- Displaying all products in table format
+- Private route management
+- 100% responsive website
