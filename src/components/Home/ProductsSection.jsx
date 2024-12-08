@@ -10,7 +10,7 @@ function ProductsSection() {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div className="bg-equi-primary-100 bg-opacity-20 pt-6 pb-10">
+    <div className="pt-6 pb-10">
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
         <header className="text-center">
           <h2 className="text-xl font-bold text-black sm:text-3xl">
